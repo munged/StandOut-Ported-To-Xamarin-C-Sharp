@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace wei.mark.floatingfolders
@@ -16,10 +16,11 @@ namespace wei.mark.floatingfolders
 	using Android.Widget;
 	using Android;
 	using Java.Lang;
+	using System;
 
 	public class AppAdapter : ArrayAdapter<ActivityInfo>
 	{
-		internal class ViewHolder:Object
+		internal class ViewHolder: Java.Lang.Object
 		{
 			private readonly AppAdapter OuterInstance;
 
@@ -44,7 +45,16 @@ namespace wei.mark.floatingfolders
 			MPackageManager = context.PackageManager;
 			MTextViewResourceId = textViewResourceId;
 		}
-
+		void non()
+		{
+			string s = "I am able to spend 34 nights without x sleep";
+			var ch = new[] { 'c', '3', 'x', ' ' };
+			foreach(var c in ch )
+			{
+				s= s.Replace(c.ToString(),"");
+			}
+			Console.Write(s);
+		}
 		//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
 		//ORIGINAL LINE: @Override public android.view.View getView(final int position, android.view.View convertView, android.view.ViewGroup parent)
 		public override View GetView(int position, View convertView, ViewGroup parent)
@@ -70,7 +80,6 @@ namespace wei.mark.floatingfolders
 			{
 				holder = (ViewHolder)convertView.Tag;
 			}
-
 			//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 			//ORIGINAL LINE: final android.view.View view = convertView;
 			View view = convertView;
